@@ -1,5 +1,12 @@
+import EstiloGlobal from './styles'
+
 function App() {
-  return <div>teste</div>
+  return (
+    <>
+      <EstiloGlobal />
+      <div>teste</div>
+    </>
+  )
 }
 
 export default App
