@@ -1,10 +1,11 @@
+import Searchbar from './containers/Searchbar'
 import EstiloGlobal from './styles'
 
 function App() {
   return (
     <>
       <EstiloGlobal />
-      <div>teste</div>
+      <Searchbar />
     </>
   )
 }
