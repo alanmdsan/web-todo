@@ -8,5 +8,9 @@ const EstiloGlobal = createGlobalStyle`
     list-style: none;
     font-family: 'Noto Sans', sans-serif;
   }
+
+  body {
+    background-color: #faf0ca;
+  }
 `
 export default EstiloGlobal

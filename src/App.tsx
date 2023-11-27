@@ -1,4 +1,5 @@
 import Searchbar from './containers/Searchbar'
+import Notes from './containers/Notes'
 import EstiloGlobal from './styles'
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <EstiloGlobal />
       <Searchbar />
+      <Notes />
     </>
   )
 }

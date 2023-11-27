@@ -8,10 +8,14 @@ const Searchbar = () => (
   <S.ContainerHeader>
     <S.imgIcon src={imgIcon} alt="" />
     <S.titleBrand>MinhasNotas</S.titleBrand>
-    <S.inputSearch type="text" placeholder="Buscar nota" />
+    <S.inputSearch
+      type="text"
+      placeholder="Buscar nota"
+      onChange={(e) => alert(e.target.value)}
+    />
     <Icon
       icon="ic:baseline-search"
-      style={{ color: '#999', margin: '16px 0px 0px -32px', cursor: 'pointer' }}
+      style={{ color: '#999', margin: '16px 0px 0px -32px' }}
       width="24"
       height="24"
     />
