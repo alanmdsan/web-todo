@@ -61,4 +61,4 @@ export const BottomArea = styled.div`
 //#eca2ff
 //#daff8b
 //#ffa285
-//#cdcdcd
+//#ffffff

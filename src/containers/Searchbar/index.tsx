@@ -4,14 +4,20 @@ import * as S from './styles'
 
 import imgIcon from '../../assets/icons8-notas-100.png'
 
-const Searchbar = () => (
+type Props = {
+  search: string
+  setSearch: (s: string) => void
+}
+
+const Searchbar = ({ search, setSearch }: Props) => (
   <S.ContainerHeader>
     <S.imgIcon src={imgIcon} alt="" />
     <S.titleBrand>MinhasNotas</S.titleBrand>
     <S.inputSearch
       type="text"
       placeholder="Buscar nota"
-      onChange={(e) => alert(e.target.value)}
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
     />
     <Icon
       icon="ic:baseline-search"

@@ -2,7 +2,11 @@ import * as S from './styles'
 import Note from '../../components/Note'
 import NoteModel from '../../models/Note'
 
-const Notes = () => {
+type Props = {
+  search: string
+}
+
+const Notes = ({ search }: Props) => {
   type NotesState = {
     itens: NoteModel[]
   }
@@ -36,7 +40,7 @@ const Notes = () => {
         title: 'estudar React pt2',
         description: 'estudar próximos capítulos de react 2',
         favorite: true,
-        color: '#cdcdcd'
+        color: '#f99494'
       }
     ]
   }
@@ -44,16 +48,20 @@ const Notes = () => {
   return (
     <S.ExternalContainer>
       <S.Container>
-        {initialState.itens.map((n) => (
-          <Note
-            key={n.id}
-            id={n.id}
-            title={n.title}
-            description={n.description}
-            favorite={n.favorite}
-            color={n.color}
-          />
-        ))}
+        {initialState.itens
+          .filter((item) =>
+            item.title.toLowerCase().includes(search.toLowerCase())
+          )
+          .map((n) => (
+            <Note
+              key={n.id}
+              id={n.id}
+              title={n.title}
+              description={n.description}
+              favorite={n.favorite}
+              color={n.color}
+            />
+          ))}
       </S.Container>
     </S.ExternalContainer>
   )
