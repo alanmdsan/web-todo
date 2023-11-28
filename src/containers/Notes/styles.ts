@@ -12,3 +12,9 @@ export const Container = styled.div`
   gap: 16px;
   padding: 24px 0;
 `
+
+export const TextType = styled.span`
+  font-size: 14px;
+  margin: 0 16px;
+  color: #333;
+`

@@ -48,7 +48,7 @@ const Notes = ({ search }: Props) => {
         title: 'estudar React pt3',
         description: 'estudar próximos capítulos de react 3',
         favorite: true,
-        color: '#f99494'
+        color: '#ffe8ac'
       }
     ]
   }
@@ -72,7 +72,9 @@ const Notes = ({ search }: Props) => {
       <S.Container>
         {numberOfFavorites() > 0
           ? [
-              <div key={nanoid()}>Favoritas</div>,
+              <div key={nanoid()}>
+                <S.TextType>Favoritas</S.TextType>
+              </div>,
               <div key={nanoid()}></div>,
               <div key={nanoid()}></div>,
               initialState.itens
@@ -100,7 +102,9 @@ const Notes = ({ search }: Props) => {
               ),
               numberOfFavorites() % 3 == 2 ? <div key={nanoid()}></div> : '',
               numberOfNotFavorites() > 0 ? (
-                <div key={nanoid()}>Outras</div>
+                <div key={nanoid()}>
+                  <S.TextType>Outras</S.TextType>
+                </div>
               ) : (
                 ''
               ),
