@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid'
 import * as S from './styles'
+import AddNote from '../../components/AddNote'
 import Note from '../../components/Note'
 import NoteModel from '../../models/Note'
 
@@ -70,6 +71,7 @@ const Notes = ({ search }: Props) => {
   return (
     <S.ExternalContainer>
       <S.Container>
+        <AddNote />
         {numberOfFavorites() > 0
           ? [
               <div key={nanoid()}>
