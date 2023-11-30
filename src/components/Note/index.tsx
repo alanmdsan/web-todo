@@ -1,5 +1,7 @@
+import * as React from 'react'
 import { useState } from 'react'
 import { Icon } from '@iconify/react'
+import { Popper } from '@mui/base/Popper'
 import axios from 'axios'
 import * as S from './styles'
 
@@ -21,6 +23,19 @@ const Note = ({
   color
 }: Props) => {
   const [isEditing, setIsEditing] = useState(false)
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+  const isPopperOpen = Boolean(anchorEl)
+  const popperId = isPopperOpen ? 'simple-popper' : undefined
+
+  const handleEditColorClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(anchorEl ? null : event.currentTarget)
+    if (event.currentTarget.hasAttribute('roundedColorButtonBgColor')) {
+      const newColor =
+        event.currentTarget.getAttribute('roundedColorButtonBgColor') ||
+        '#ffffff'
+      updateNoteColor(newColor)
+    }
+  }
 
   function updateNoteTitle(newTitle: string) {
     return updateNote(newTitle, description, favorite, color)
@@ -111,13 +126,67 @@ const Note = ({
             height="24"
             onClick={() => setIsEditing(!isEditing)}
           />
-          <Icon
-            icon="bxs:color-fill"
-            style={{ color: '#666', cursor: 'pointer', margin: '2px' }}
-            width="24"
-            height="24"
-            onClick={() => alert('color edit')}
-          />
+          <S.EditColorButton
+            aria-describedby={popperId}
+            type="button"
+            onClick={handleEditColorClick}
+          >
+            <Icon
+              icon="bxs:color-fill"
+              style={{ color: '#666', cursor: 'pointer', margin: '2px' }}
+              width="24"
+              height="24"
+            />
+          </S.EditColorButton>
+          <Popper
+            id={popperId}
+            open={isPopperOpen}
+            anchorEl={anchorEl}
+            placement="bottom-start"
+          >
+            <S.StyledPopperDiv>
+              <S.RoundedColorButton
+                roundedColorButtonBgColor={'#bae2ff'}
+                onClick={handleEditColorClick}
+              ></S.RoundedColorButton>
+              <S.RoundedColorButton
+                roundedColorButtonBgColor={'#b9ffdd'}
+                onClick={handleEditColorClick}
+              ></S.RoundedColorButton>
+              <S.RoundedColorButton
+                roundedColorButtonBgColor={'#ffe8ac'}
+                onClick={handleEditColorClick}
+              ></S.RoundedColorButton>
+              <S.RoundedColorButton
+                roundedColorButtonBgColor={'#ffcab9'}
+                onClick={handleEditColorClick}
+              ></S.RoundedColorButton>
+              <S.RoundedColorButton
+                roundedColorButtonBgColor={'#f99494'}
+                onClick={handleEditColorClick}
+              ></S.RoundedColorButton>
+              <S.RoundedColorButton
+                roundedColorButtonBgColor={'#9dd6ff'}
+                onClick={handleEditColorClick}
+              ></S.RoundedColorButton>
+              <S.RoundedColorButton
+                roundedColorButtonBgColor={'#eca2ff'}
+                onClick={handleEditColorClick}
+              ></S.RoundedColorButton>
+              <S.RoundedColorButton
+                roundedColorButtonBgColor={'#daff8b'}
+                onClick={handleEditColorClick}
+              ></S.RoundedColorButton>
+              <S.RoundedColorButton
+                roundedColorButtonBgColor={'#ffa285'}
+                onClick={handleEditColorClick}
+              ></S.RoundedColorButton>
+              <S.RoundedColorButton
+                roundedColorButtonBgColor={'#ededed'}
+                onClick={handleEditColorClick}
+              ></S.RoundedColorButton>
+            </S.StyledPopperDiv>
+          </Popper>
         </div>
         <div>
           <Icon

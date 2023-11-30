@@ -11,6 +11,7 @@ export const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   padding: 24px 0;
+  margin-bottom: 32px;
 `
 
 export const TextType = styled.span`
