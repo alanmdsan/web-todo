@@ -1,6 +1,4 @@
-<div>
-    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/71332beb2ba54fcbb857b93bfd3524e3-with-play.gif">
-  </div>
+https://github.com/alanmdsan/web-todo/assets/132408065/b0fad15f-83ae-4ffb-8301-1d78391c2a10
 
 # web-todo
 
