@@ -1,4 +1,4 @@
-https://github.com/alanmdsan/web-todo/assets/132408065/b0fad15f-83ae-4ffb-8301-1d78391c2a10
+https://github.com/alanmdsan/web-todo/assets/132408065/dd231a4c-2d02-41ee-a7fa-d0d4bb6dae2c
 
 # web-todo
 
