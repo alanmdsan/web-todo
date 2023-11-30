@@ -1,18 +1,18 @@
 class Note {
-  id: string
+  _id: string
   title: string
   description: string
   favorite: boolean
   color: string
 
   constructor(
-    id: string,
+    _id: string,
     title: string,
     description: string,
     favorite: boolean,
     color: string
   ) {
-    this.id = id
+    this._id = _id
     this.title = title
     this.description = description
     this.favorite = favorite

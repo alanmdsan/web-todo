@@ -1,35 +1,44 @@
 import { useState } from 'react'
 import { Icon } from '@iconify/react'
-import { nanoid } from 'nanoid'
+import axios from 'axios'
 import * as S from './styles'
-import NoteModel from '../../models/Note'
 
 type Props = {
-  myNotes: NoteModel[]
-  setMyNotes: (arr: NoteModel[]) => void
+  getAllNotes: () => void
 }
 
-const AddNote = ({ myNotes, setMyNotes }: Props) => {
+const AddNote = ({ getAllNotes }: Props) => {
   const [newTitle, setNewTitle] = useState('Título')
   const [newDescription, setNewDescription] = useState('')
   const [newFavorite, setNewFavorite] = useState(false)
+
+  async function addNote(
+    title: string,
+    description: string,
+    favorite: boolean
+  ) {
+    const data = {
+      title,
+      description,
+      favorite,
+      color: '#ffffff'
+    }
+    try {
+      await axios.post('http://localhost:3333/notes/', data)
+      getAllNotes()
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   function addNewNote() {
     if (newTitle == '' || newDescription == '') {
       alert('Preencha a nota antes de adicionar')
     } else {
-      const updateNotes = [
-        ...myNotes,
-        {
-          id: nanoid(),
-          title: newTitle,
-          description: newDescription,
-          favorite: newFavorite,
-          color: '#ffffff'
-        }
-      ]
-      setMyNotes(updateNotes)
+      addNote(newTitle, newDescription, newFavorite)
       alert('Nova nota adicionada!')
+
+      // renew states
       setNewTitle('Título')
       setNewDescription('')
       setNewFavorite(false)

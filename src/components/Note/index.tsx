@@ -1,14 +1,65 @@
+import { useState } from 'react'
 import { Icon } from '@iconify/react'
+import axios from 'axios'
 import * as S from './styles'
-import NoteModel from '../../models/Note'
 
-type Props = NoteModel
+type Props = {
+  getAllNotes: () => void
+  _id: string
+  title: string
+  description: string
+  favorite: boolean
+  color: string
+}
 
-const Note = ({ id, title, description, favorite, color }: Props) => {
+const Note = ({
+  getAllNotes,
+  _id,
+  title,
+  description,
+  favorite,
+  color
+}: Props) => {
+  const [isEditing, setIsEditing] = useState(false)
+  const [newTitle, setNewTitle] = useState(title)
+
+  async function deleteNote(_id: string) {
+    try {
+      await axios.delete(`http://localhost:3333/notes/${_id}`)
+      getAllNotes()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const updateState = () => {
+    // const newState = myNotes.map((obj) => {
+    //   if (obj.id === id) {
+    //     return { ...obj, title: newTitle }
+    //   }
+    //   return obj
+    // })
+    // setMyNotes(newState)
+  }
+
+  const editingTitle = (text: string) => {
+    setNewTitle(text)
+    updateState()
+  }
+
   return (
     <S.NoteContainer noteColor={color} noteFavorite={favorite}>
       <S.TitleArea>
-        <h2>{title}</h2>
+        <h2
+          contentEditable={isEditing}
+          onBlur={(e) =>
+            e.currentTarget.innerText !== null
+              ? editingTitle(e.currentTarget.innerText)
+              : ''
+          }
+        >
+          {newTitle}
+        </h2>
         <Icon
           icon={
             favorite ? 'material-symbols:star' : 'material-symbols:star-outline'
@@ -31,11 +82,11 @@ const Note = ({ id, title, description, favorite, color }: Props) => {
       <S.BottomArea>
         <div>
           <Icon
-            icon="ic:outline-edit"
+            icon={isEditing ? 'ic:edit' : 'ic:outline-edit'}
             style={{ color: '#666', cursor: 'pointer', margin: '2px' }}
             width="24"
             height="24"
-            onClick={() => alert('edit')}
+            onClick={() => setIsEditing(!isEditing)}
           />
           <Icon
             icon="bxs:color-fill"
@@ -51,7 +102,7 @@ const Note = ({ id, title, description, favorite, color }: Props) => {
             style={{ color: '#666', cursor: 'pointer', margin: '2px' }}
             width="24"
             height="24"
-            onClick={() => alert('delete')}
+            onClick={() => deleteNote(_id)}
           />
         </div>
       </S.BottomArea>
