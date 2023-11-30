@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Icon } from '@iconify/react'
+import { nanoid } from 'nanoid'
 import axios from 'axios'
 import * as S from './styles'
 
@@ -83,6 +84,8 @@ const AddNote = ({ getAllNotes }: Props) => {
               setNewDescription(e.target.value !== null ? e.target.value : '')
             }
             value={newDescription}
+            id={nanoid()}
+            name={nanoid()}
           />
         </S.MiddleArea>
 

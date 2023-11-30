@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 type StyleProps = {
-  noteColor: string
-  noteFavorite: boolean
+  $noteColor: string
+  $noteFavorite: boolean
 }
 
 type ColorButtonProps = {
@@ -12,10 +12,10 @@ type ColorButtonProps = {
 export const NoteContainer = styled.div<StyleProps>`
   width: 360px;
   height: 400px;
-  background-color: ${(props) => props.noteColor};
+  background-color: ${({ $noteColor }) => $noteColor};
   border-radius: 16px;
-  box-shadow: ${(props) =>
-    props.noteFavorite ? '2px 2px 4px rgb(0 0 0 / 0.2)' : '0px'};
+  box-shadow: ${({ $noteFavorite }) =>
+    $noteFavorite ? '2px 2px 4px rgb(0 0 0 / 0.2)' : '0px'};
 
   @media (max-width: 768px) {
     justify-self: center;

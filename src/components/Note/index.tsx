@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useState } from 'react'
 import { Icon } from '@iconify/react'
+import { nanoid } from 'nanoid'
 import { Popper } from '@mui/base/Popper'
 import axios from 'axios'
 import * as S from './styles'
@@ -83,7 +84,7 @@ const Note = ({
   }
 
   return (
-    <S.NoteContainer noteColor={color} noteFavorite={favorite}>
+    <S.NoteContainer $noteColor={color} $noteFavorite={favorite}>
       <S.TitleArea>
         <h2
           contentEditable={isEditing}
@@ -115,6 +116,8 @@ const Note = ({
           onBlur={(e) =>
             updateNoteDescription(e.target.value !== null ? e.target.value : '')
           }
+          id={nanoid()}
+          name={nanoid()}
         />
       </S.MiddleArea>
 

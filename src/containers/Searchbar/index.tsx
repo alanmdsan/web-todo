@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid'
 import { Icon } from '@iconify/react'
 
 import * as S from './styles'
@@ -18,6 +19,8 @@ const Searchbar = ({ search, setSearch }: Props) => (
       placeholder="Buscar nota"
       value={search}
       onChange={(e) => setSearch(e.target.value)}
+      id={nanoid()}
+      name={nanoid()}
     />
     <Icon
       icon="ic:baseline-search"
