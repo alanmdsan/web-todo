@@ -87,6 +87,7 @@ const Note = ({
       <S.TitleArea>
         <h2
           contentEditable={isEditing}
+          suppressContentEditableWarning={true}
           onBlur={(e) =>
             e.currentTarget.innerText !== null
               ? updateNoteTitle(e.currentTarget.innerText)

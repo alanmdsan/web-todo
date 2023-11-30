@@ -52,6 +52,7 @@ const AddNote = ({ getAllNotes }: Props) => {
         <S.TitleArea>
           <h2
             contentEditable
+            suppressContentEditableWarning={true}
             onBlur={(e) =>
               setNewTitle(
                 e.currentTarget.innerText !== null
