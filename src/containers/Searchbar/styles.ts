@@ -8,7 +8,7 @@ export const ContainerHeader = styled.div`
   background-color: #f4d35e;
 
   @media (max-width: 768px) {
-    padding: 8px;
+    min-width: 640px;
   }
 `
 

@@ -12,6 +12,18 @@ export const Container = styled.div`
   gap: 16px;
   padding: 24px 0;
   margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+export const DivTextType = styled.div`
+  @media (max-width: 768px) {
+    margin-top: 8px;
+    margin-bottom: -32px;
+    justify-self: center;
+  }
 `
 
 export const TextType = styled.span`

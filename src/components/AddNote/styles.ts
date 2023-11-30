@@ -8,6 +8,10 @@ export const AddNoteContainer = styled.div`
   border-radius: 2px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   margin: 8px 0 16px;
+
+  @media (max-width: 768px) {
+    justify-self: center;
+  }
 `
 
 export const TitleArea = styled.div`

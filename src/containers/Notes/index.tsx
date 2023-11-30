@@ -47,9 +47,9 @@ const Notes = ({ search }: Props) => {
         <AddNote getAllNotes={getAllNotes} />
         {numberOfFavorites() > 0
           ? [
-              <div key={nanoid()}>
+              <S.DivTextType key={nanoid()}>
                 <S.TextType>Favoritas</S.TextType>
-              </div>,
+              </S.DivTextType>,
               <div key={nanoid()}></div>,
               <div key={nanoid()}></div>,
               myNotes
@@ -78,9 +78,9 @@ const Notes = ({ search }: Props) => {
               ),
               numberOfFavorites() % 3 == 2 ? <div key={nanoid()}></div> : '',
               numberOfNotFavorites() > 0 ? (
-                <div key={nanoid()}>
+                <S.DivTextType key={nanoid()}>
                   <S.TextType>Outras</S.TextType>
-                </div>
+                </S.DivTextType>
               ) : (
                 ''
               ),

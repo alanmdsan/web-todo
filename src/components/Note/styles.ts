@@ -16,6 +16,10 @@ export const NoteContainer = styled.div<StyleProps>`
   border-radius: 16px;
   box-shadow: ${(props) =>
     props.noteFavorite ? '2px 2px 4px rgb(0 0 0 / 0.2)' : '0px'};
+
+  @media (max-width: 768px) {
+    justify-self: center;
+  }
 `
 
 export const TitleArea = styled.div`
@@ -89,7 +93,7 @@ export const RoundedColorButton = styled.button<ColorButtonProps>`
   cursor: pointer;
   border-radius: 50%;
 `
-
+// possible note's colors
 //#bae2ff
 //#b9ffdd
 //#ffe8ac
@@ -99,4 +103,5 @@ export const RoundedColorButton = styled.button<ColorButtonProps>`
 //#eca2ff
 //#daff8b
 //#ffa285
+//#ededed
 //#ffffff
