@@ -1,8 +1,4 @@
-<div>
-  <a href="https://www.loom.com/share/71332beb2ba54fcbb857b93bfd3524e3">
-    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/71332beb2ba54fcbb857b93bfd3524e3-with-play.gif">
-  </a>
-</div>
+<div style="position: relative; padding-bottom: 59.73451327433629%; height: 0;"><iframe src="https://www.loom.com/embed/71332beb2ba54fcbb857b93bfd3524e3?sid=7eb7cf32-6a5c-4aea-b7c3-d257b70a72b0?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 # web-todo
 
