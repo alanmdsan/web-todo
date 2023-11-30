@@ -1,3 +1,9 @@
+<div>
+  <a href="https://www.loom.com/share/71332beb2ba54fcbb857b93bfd3524e3">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/71332beb2ba54fcbb857b93bfd3524e3-with-play.gif">
+  </a>
+</div>
+
 # web-todo
 
 this project uses React
